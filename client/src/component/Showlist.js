@@ -172,7 +172,7 @@ const Showlist = () => {
         axios.get(`https://hong-popol.herokuapp.com/show_list_page`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
-    console.log(page) //현재페이지
+    console.log(page,'page') //현재페이지
     console.log(num,'num')
     const ifnum = 20
     const page1 = ifnum / 10
@@ -229,7 +229,7 @@ const Showlist = () => {
                 <Index4>조회수</Index4>
             </Index>
             <Lists>
-                {
+                {/* {
                     list.map(data=>(
                     <Colum key={data.id}>
                             <Index1>{data.id}</Index1>
@@ -244,7 +244,7 @@ const Showlist = () => {
                             <Index4>{data.views}</Index4>                        
                     </Colum>
                     ))
-                }
+                } */}
             </Lists>
             <Pagingbox>
                 {btn2&&<Pagingbtn onClick={()=>{setCurrentPage(currentPage-1)}}>이전</Pagingbtn>}
