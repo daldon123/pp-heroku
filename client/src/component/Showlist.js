@@ -230,8 +230,8 @@ const Showlist = () => {
             </Index>
             <Lists>
                 {
-                    data.map((data)=>(
-                    <Colum key={data.id}>
+                    data.map((data,key)=>(
+                    <Colum key={key}>
                             <Index1>{data.id}</Index1>
                             <Index2Link onClick={()=>{ const ids = data.id
                                                          const vcount = data.views
