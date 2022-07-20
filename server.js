@@ -17,7 +17,7 @@ const options = {
 };
 
 const db = require('./database/db');
-app.get('/',(req, res)=>{
+app.get('/asd',(req, res)=>{
     const sql = `select * from motogall_write;`
     db.query(sql, (err, rs)=>{
         res.send(rs)
