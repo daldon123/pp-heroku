@@ -173,15 +173,22 @@ const Showlist = () => {
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
     console.log(page) //현재페이지
+    console.log(num,'num')
     const page1 = num / 10
     const page2 = Math.ceil(page1)
     
-    const [postsPerPage, setPostsPerPage] = useState(10);  //한번에 보여줄 페이지 갯수
+    const postsPerPage = 10;  //한번에 보여줄 페이지 갯수
     const [currentPage, setCurrentPage ] = useState(1);    //현재 페이지 블럭
     const [btn1, setbtn1] = useState(false)
     const [btn2, setbtn2] = useState(false)
     console.log(page2)//총페이지 갯수
     console.log(currentPage,"currentPage")
+    const indexOfLast = currentPage * postsPerPage;  //최대 페이지 보여줄 갯수 처음 10개
+    console.log(indexOfLast,"indexOfLast")
+    const pagearray = [...Array(page2)].slice(indexOfLast-10,indexOfLast)
+
+    const [btncolor, setbtncolor] = useState(1)
+    console.log(btncolor,'btncolor')
     useEffect(()=>{
         if(page2 > postsPerPage){
             setbtn1(true)
@@ -198,13 +205,9 @@ const Showlist = () => {
             setbtn2(false)
         }
         
-    },[num,page2,currentPage])
-    const indexOfLast = currentPage * postsPerPage;  //최대 페이지 보여줄 갯수 처음 10개
-    console.log(indexOfLast,"indexOfLast")
-    const pagearray = [...Array(page2)].slice(indexOfLast-10,indexOfLast)
+    },[num,page2,currentPage,postsPerPage,indexOfLast])
 
-    const [btncolor, setbtncolor] = useState(1)
-    console.log(btncolor,'btncolor')
+
 
   return (
     <Container>
@@ -246,7 +249,10 @@ const Showlist = () => {
                 {btn2&&<Pagingbtn onClick={()=>{setCurrentPage(currentPage-1)}}>이전</Pagingbtn>}
                 {
                     pagearray.map((data, key)=>(
-                        <Pagingbtn key={key} className={`${key+1 === btncolor ? 'active': ''}`} onClick={()=>(setpage(key),setbtncolor(key+1))}>
+                        <Pagingbtn key={key} className={`${key+1 === btncolor ? 'active': ''}`} onClick={()=>{
+                            setpage(key)
+                            setbtncolor(key+1)
+                        }}>
                             {key+1}
                         </Pagingbtn>
                     ))
