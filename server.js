@@ -238,7 +238,7 @@ var storage = multer.diskStorage({
   const makeidx =()=>{
     return idx = uuid()
   }
-  app.use('/asd',(req,res,next)=>{
+  app.use('/uuid',(req,res,next)=>{
     makeidx()
     console.log(idx)
   })

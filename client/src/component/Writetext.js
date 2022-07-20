@@ -59,7 +59,7 @@ const Writetext = ({login}) => {
 
     const [usernick, setusernick] =useState('비공개')
     const send_Write_text = () =>{
-        axios.post('http://localhost:4000/write_border',{
+        axios.post('https://hong-popol.herokuapp.com/write_border',{
             title: Write_text.title || '제목없음',
             content: Write_text.content,
             nickname: sessionStorage.getItem('userid') || usernick,
@@ -69,7 +69,7 @@ const Writetext = ({login}) => {
 
     
     useEffect(()=>{
-        axios.get('http://localhost:4000/asd')
+        axios.get('https://hong-popol.herokuapp.com/uuid')
         .then(rs=>console.log(rs))
     },[])
 
