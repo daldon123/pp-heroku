@@ -157,7 +157,7 @@ const Pagingbtn = styled.div`
 `
 const Showlist = () => {
 
-    const [data, setdata] = useState([])//글목록
+    const [data, setdata] = useState([{}])//글목록
     const [page, setpage] = useState(0)                    //현재 페이지
     console.log(page)
     useEffect(()=>{
@@ -166,7 +166,7 @@ const Showlist = () => {
         
     },[page])
     /* console.log(data) */
-    
+    console.log(data,'data')
     const [num, setnum] = useState(0)
     useEffect(()=>{
         axios.get(`https://hong-popol.herokuapp.com/show_list_page`)
