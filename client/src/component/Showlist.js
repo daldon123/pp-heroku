@@ -229,8 +229,9 @@ const Showlist = () => {
                 <Index4>조회수</Index4>
             </Index>
             <Lists>
-                {/* {
-                    list.map(data=>(
+                {
+                    list.map(data=>
+                    {
                     <Colum key={data.id}>
                             <Index1>{data.id}</Index1>
                             <Index2Link onClick={()=>{ const ids = data.id
@@ -243,8 +244,9 @@ const Showlist = () => {
                             <Index3>{data.nickname}</Index3>
                             <Index4>{data.views}</Index4>                        
                     </Colum>
-                    ))
-                } */}
+                    }
+                    )
+                }
             </Lists>
             <Pagingbox>
                 {btn2&&<Pagingbtn onClick={()=>{setCurrentPage(currentPage-1)}}>이전</Pagingbtn>}
