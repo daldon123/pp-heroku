@@ -161,14 +161,14 @@ const Showlist = () => {
     const [page, setpage] = useState(0)   //현재 페이지
     console.log(page)
     useEffect(()=>{
-        axios.get(`http://localhost:4000/show_list?page=${page}`)
+        axios.get(`https://hong-popol.herokuapp.com/show_list?page=${page}`)
         .then(rs=>setlist(rs.data))
     },[page])
     // console.log(list,'list')
 
     const [num, setnum] = useState(0)
     useEffect(()=>{
-        axios.get(`http://localhost:4000/page_number`)
+        axios.get(`https://hong-popol.herokuapp.com/page_number`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
     console.log(num,'num')//총 글 갯수
