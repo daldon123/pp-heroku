@@ -157,16 +157,15 @@ const Pagingbtn = styled.div`
 `
 const Showlist = () => {
 
-    const [data, setdata] = useState([{}])//글목록
+    const [list, setlist] = useState([{}])//글목록
     const [page, setpage] = useState(0)                    //현재 페이지
     console.log(page)
     useEffect(()=>{
         axios.get(`https://hong-popol.herokuapp.com/show_list?page=${page}`)
-        .then(rs=>setdata(rs.data))
-        
+        .then(rs=>setdata(rs))
     },[page])
-    /* console.log(data) */
-    console.log(data,'data')
+
+    console.log(list,'list')
     const [num, setnum] = useState(0)
     useEffect(()=>{
         axios.get(`https://hong-popol.herokuapp.com/show_list_page`)
@@ -230,8 +229,8 @@ const Showlist = () => {
             </Index>
             <Lists>
                 {
-                    data.map((data,key)=>(
-                    <Colum key={key}>
+                    list.data.map(data=>(
+                    <Colum key={data.id}>
                             <Index1>{data.id}</Index1>
                             <Index2Link onClick={()=>{ const ids = data.id
                                                          const vcount = data.views
