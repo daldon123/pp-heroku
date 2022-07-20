@@ -169,7 +169,7 @@ const Showlist = () => {
 
     const [num, setnum] = useState(0)
     useEffect(()=>{
-        axios.get(`http://localhost:4000/show_list_page`)
+        axios.get(`http://localhost:4000//show_list/page_number`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
     console.log(num,'num')//총 글 갯수
