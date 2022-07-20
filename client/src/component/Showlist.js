@@ -161,7 +161,7 @@ const Showlist = () => {
     const [page, setpage] = useState(0)                    //현재 페이지
     console.log(page)
     useEffect(()=>{
-        axios.get(`https://hong-popol.herokuapp.com/show_list?page=${page}`)
+        axios.get(`http://localhost:4000/show_list?page=${page}`)
         .then(rs=>setdata(rs.data))
         
     },[page])
@@ -169,7 +169,7 @@ const Showlist = () => {
     console.log(list,'list')
     const [num, setnum] = useState(0)
     useEffect(()=>{
-        axios.get(`https://hong-popol.herokuapp.com/show_list_page`)
+        axios.get(`http://localhost:4000/show_list_page`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
     console.log(page,'page') //현재페이지
@@ -234,12 +234,12 @@ const Showlist = () => {
                     {
                     <Colum key={data.id}>
                             <Index1>{data.id}</Index1>
-                            <Index2Link onClick={()=>{ const ids = data.id
-                                                         const vcount = data.views
-                                                         axios.post('https://hong-popol.herokuapp.com/count_views',{
+                            <Index2Link onClick={()=>{  const ids = data.id
+                                                        const vcount = data.views
+                                                        axios.post('http://localhost:4000/count_views',{
                                                             ids:ids,
                                                             vcount:vcount
-                                                         })                               
+                                                        })                               
                             }} className='Linktext' to={`/Showtext/${data.id}`} >{data.title}</Index2Link>
                             <Index3>{data.nickname}</Index3>
                             <Index4>{data.views}</Index4>                        
