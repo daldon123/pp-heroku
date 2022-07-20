@@ -157,7 +157,7 @@ const Pagingbtn = styled.div`
 `
 const Showlist = () => {
 
-    const [data, setdata] = useState([{}])//글목록
+    const [list, setdata] = useState([{}])//글목록
     const [page, setpage] = useState(0)                    //현재 페이지
     console.log(page)
     useEffect(()=>{
@@ -166,7 +166,7 @@ const Showlist = () => {
         
     },[page])
 
-    console.log(data,'data')
+    console.log(list,'list')
     const [num, setnum] = useState(0)
     useEffect(()=>{
         axios.get(`https://hong-popol.herokuapp.com/show_list_page`)
@@ -230,7 +230,7 @@ const Showlist = () => {
             </Index>
             <Lists>
                 {
-                    data.map(data=>(
+                    list.map(data=>(
                     <Colum key={data.id}>
                             <Index1>{data.id}</Index1>
                             <Index2Link onClick={()=>{ const ids = data.id
