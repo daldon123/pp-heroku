@@ -174,7 +174,7 @@ const Showlist = () => {
     },[])
     console.log(page) //현재페이지
     console.log(num,'num')
-    const ifnum = 0
+    const ifnum = 20
     const page1 = ifnum / 10
     const page2 = Math.ceil(page1)
     
