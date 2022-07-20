@@ -16,6 +16,16 @@ const options = {
     optionsSuccessStatus: 200, // 응답 상태 200으로 설정
 };
 
+const db = require('./database/db');
+app.get('/',(req, res)=>{
+    const sql = `select * from motogall_write;`
+    db.query(sql, (err, rs)=>{
+        res.send(rs)
+    })
+})
+
+
+
 app.use('/',  express.static(path.join(__dirname, 'uploads')));
 app.use(cors(options));
 // app.use(cors());
