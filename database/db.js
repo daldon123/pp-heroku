@@ -6,3 +6,5 @@ const db = mysql.createPool({
     database:'w5y69ki1y9udcp9i'
 });
 module.exports = db;
+
+
