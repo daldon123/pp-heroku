@@ -157,19 +157,18 @@ const Pagingbtn = styled.div`
 `
 const Showlist = () => {
 
-    const [list, setdata] = useState([{}])//글목록
-    const [page, setpage] = useState(0)                    //현재 페이지
+    const [list, setlist] = useState([{}])//글목록
+    const [page, setpage] = useState(0)   //현재 페이지
     console.log(page)
     useEffect(()=>{
         axios.get(`http://localhost:4000/show_list?page=${page}`)
-        .then(rs=>setdata(rs.data))
-        
+        .then(rs=>setlist(rs.data))
     },[page])
-    console.log(list,'list')
+    // console.log(list,'list')
 
     const [num, setnum] = useState(0)
     useEffect(()=>{
-        axios.get(`http://localhost:4000//show_list/page_number`)
+        axios.get(`http://localhost:4000/page_number`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
     console.log(num,'num')//총 글 갯수

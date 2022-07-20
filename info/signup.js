@@ -4,6 +4,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
+
 app.post('/signup',(req, res)=>{
     console.log('/signup 호출됨')
     const userid = req.body.user_id

@@ -14,7 +14,7 @@ app.get('/show_list',(req, res)=>{
     })
 })
 
-app.get('/show_list/page_number',(req, res)=>{
+app.get('/page_number',(req, res)=>{
     console.log('/show_list_page 호출됨')
     const sql2 = `select count(*) from motogall_write;`
     db.query(sql2, (err, rs)=>{
