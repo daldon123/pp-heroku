@@ -12,7 +12,7 @@ const Reply = ({f_id,index}) => {
 
     const [shwocoment, setshwocoment] = useState([])
     useEffect(()=>{
-        axios.post('http://localhost:4000/reply_shows',{
+        axios.post('https://hong-popol.herokuapp.com/reply_shows',{
             f_id:f_id,
             indexs:index,
         })

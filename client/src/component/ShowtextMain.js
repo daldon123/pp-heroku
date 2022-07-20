@@ -14,7 +14,7 @@ const Maintext = styled.div`
 
 const ShowtextMain = ({con,asd}) => {
 
-  const content = con.replace('<figure class="image"><img></figure>',`<figure class="image"><img src="http://localhost:4000/show_img2?path=${asd}" alt="picsum"/></figure>`)
+  const content = con.replace('<figure class="image"><img></figure>',`<figure class="image"><img src="https://hong-popol.herokuapp.com/show_img2?path=${asd}" alt="picsum"/></figure>`)
 
   return (
     <>

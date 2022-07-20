@@ -122,7 +122,7 @@ const Showtext = () => {
     // console.log(indexs)
     const [data, setdata] = useState({})
     useEffect(()=>{
-        axios.post('http://localhost:4000/show_text',{
+        axios.post('https://hong-popol.herokuapp.com/show_text',{
             indexs:indexs
         })
         .then(rs=>setdata(rs.data[0]))
@@ -133,7 +133,7 @@ const Showtext = () => {
 
 
     useEffect(()=>{
-        axios.post('http://localhost:4000/show_img',{
+        axios.post('https://hong-popol.herokuapp.com/show_img',{
             idpk:data.idpk
         })
         .then(rs=>{

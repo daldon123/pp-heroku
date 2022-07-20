@@ -161,7 +161,7 @@ const Showlist = () => {
     const [page, setpage] = useState(0)                    //현재 페이지
     console.log(page)
     useEffect(()=>{
-        axios.get(`http://localhost:4000/show_list?page=${page}`)
+        axios.get(`https://hong-popol.herokuapp.com/show_list?page=${page}`)
         .then(rs=>setdata(rs.data))
         
     },[page])
@@ -169,7 +169,7 @@ const Showlist = () => {
     
     const [num, setnum] = useState('')
     useEffect(()=>{
-        axios.get(`http://localhost:4000/show_list_page`)
+        axios.get(`https://hong-popol.herokuapp.com/show_list_page`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
     console.log(page) //현재페이지

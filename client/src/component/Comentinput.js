@@ -37,7 +37,7 @@ const Btn4 = styled.div`
 const Comentinput = ({s_id, index, f_id,f_s_id ,s_index}) => {
     console.log(s_id)
     const sendreply = ()=>{
-        axios.post('http://localhost:4000/reply_show',{
+        axios.post('https://hong-popol.herokuapp.com/reply_show',{
             f_s_id:f_s_id,
             f_id:f_id,
             s_id:s_id,

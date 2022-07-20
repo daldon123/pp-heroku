@@ -10,7 +10,7 @@ const Ckeditor = ({setWrite_text, Write_text}) => {
             config={{
                 ckfinder: {
                     // Upload the images to the server using the CKFinder QuickUpload command.
-                    uploadUrl: 'http://localhost:4000/uploadimg'
+                    uploadUrl: 'https://hong-popol.herokuapp.com/uploadimg'
                 }
             }}
             editor={ ClassicEditor }

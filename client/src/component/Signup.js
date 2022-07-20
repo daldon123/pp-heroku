@@ -147,7 +147,7 @@ const Signup = () => {
 
 
     const postuserinfo =()=>{
-        axios.post('http://localhost:4000/signup',{
+        axios.post('https://hong-popol.herokuapp.com/signup',{
             user_id:userid,
             user_pass:userpass,
             user_email:useremail
