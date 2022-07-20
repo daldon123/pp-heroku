@@ -167,7 +167,7 @@ const Showlist = () => {
     },[page])
     /* console.log(data) */
     
-    const [num, setnum] = useState('')
+    const [num, setnum] = useState(0)
     useEffect(()=>{
         axios.get(`https://hong-popol.herokuapp.com/show_list_page`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
