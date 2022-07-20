@@ -157,7 +157,7 @@ const Showtext = () => {
     
     // 글삭제
     const deletepage = () =>{
-        axios.post('http://localhost:4000/delet_page',{
+        axios.post('https://hong-popol.herokuapp.com/delet_page',{
             indexs:indexs
         })
         document.location.href = '/'
@@ -169,7 +169,7 @@ const Showtext = () => {
     const [showcoment, setshwocoment] = useState([])
     // console.log(coment)
     const sendcoment = ()=>{
-        axios.post('http://localhost:4000/coment',{
+        axios.post('https://hong-popol.herokuapp.com/coment',{
             indexs:indexs,
             nickname:sessionStorage.getItem('userid') || '비공개',
             coment:coment
@@ -177,7 +177,7 @@ const Showtext = () => {
         document.location.reload()
     }
     useEffect(()=>{
-        axios.post('http://localhost:4000/coment_show',{
+        axios.post('https://hong-popol.herokuapp.com/coment_show',{
             indexs:indexs
         })
         .then(res=>{

@@ -231,7 +231,7 @@ const Showlist = () => {
                             <Index1>{data.id}</Index1>
                             <Index2Link onClick={()=>{ const ids = data.id
                                                          const vcount = data.views
-                                                         axios.post('http://localhost:4000/count_views',{
+                                                         axios.post('https://hong-popol.herokuapp.com/count_views',{
                                                             ids:ids,
                                                             vcount:vcount
                                                          })                               
