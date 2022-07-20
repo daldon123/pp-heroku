@@ -50,7 +50,7 @@ app.post('/write_border', (req, res)=>{
   const title = req.body.title
   const content = req.body.content
   const nickname = req.body.nickname
-  const sql = `insert into motogall_border_write ( title, content, nickname, idpk) values( '${title}', '${content}', '${nickname}', '${idx}')`
+  const sql = `insert into motogall_write ( title, content, nickname, idpk) values( '${title}', '${content}', '${nickname}', '${idx}')`
   db.query(sql, (err, rs)=>{
       console.log(sql)
   })

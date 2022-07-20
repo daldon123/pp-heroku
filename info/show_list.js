@@ -8,7 +8,7 @@ app.get('/show_list',(req, res)=>{
     const page = req.query.page
     const num = page * 10
     console.log('페이지넘버',num)
-    const sql = `select * from motogall_border_write order by id desc limit ${num},10;`
+    const sql = `select * from motogall_write order by id desc limit ${num},10;`
     db.query(sql, (err, rs)=>{
         res.send(rs)
     })
@@ -16,7 +16,7 @@ app.get('/show_list',(req, res)=>{
 
 app.get('/show_list_page',(req, res)=>{
     console.log('/show_list_page 호출됨')
-    const sql2 = `select count(*) from motogall_border_write;`
+    const sql2 = `select count(*) from motogall_write;`
     db.query(sql2, (err, rs)=>{
         res.send(rs)
         console.log(rs)

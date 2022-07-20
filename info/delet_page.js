@@ -10,7 +10,7 @@ app.post('/delet_page',(req, res, next)=>{
     console.log('/delet_page 호출됨')
     const id = req.body.indexs
     console.log(id)
-    const sql = `delete from motogall_border_write where id = ${id}`
+    const sql = `delete from motogall_write where id = ${id}`
 
 
     db.query(sql, (err, rs)=>{

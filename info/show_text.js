@@ -13,7 +13,7 @@ app.post('/show_text',(req, res, next)=>{
     console.log('/show_text 호출됨')
     const id = req.body.indexs
     console.log(id)
-    const sql = `select * from motogall_border_write where id=${id}`
+    const sql = `select * from motogall_write where id=${id}`
     db.query(sql, (err, rs)=>{
         res.send(rs)
     })
