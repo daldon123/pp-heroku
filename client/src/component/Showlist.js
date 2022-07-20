@@ -165,15 +165,17 @@ const Showlist = () => {
         .then(rs=>setdata(rs.data))
         
     },[page])
-
     console.log(list,'list')
+
     const [num, setnum] = useState(0)
     useEffect(()=>{
         axios.get(`http://localhost:4000/show_list_page`)
         .then(rs=>setnum(rs.data[0]['count(*)']))
     },[])
+    console.log(num,'num')//총 글 갯수
+
     console.log(page,'page') //현재페이지
-    console.log(num,'num')
+
     const ifnum = 20
     const page1 = ifnum / 10
     const page2 = Math.ceil(page1)
@@ -230,9 +232,8 @@ const Showlist = () => {
             </Index>
             <Lists>
                 {
-                    list.map(data=>
-                    {
-                    <Colum key={data.id}>
+                    list.map((data,key)=>(
+                    <Colum key={key}>
                             <Index1>{data.id}</Index1>
                             <Index2Link onClick={()=>{  const ids = data.id
                                                         const vcount = data.views
@@ -244,15 +245,15 @@ const Showlist = () => {
                             <Index3>{data.nickname}</Index3>
                             <Index4>{data.views}</Index4>                        
                     </Colum>
-                    }
-                    )
+                    ))
                 }
             </Lists>
             <Pagingbox>
                 {btn2&&<Pagingbtn onClick={()=>{setCurrentPage(currentPage-1)}}>이전</Pagingbtn>}
                 {
                     pagearray.map((data, key)=>(
-                        <Pagingbtn key={key} className={`${key+1 === btncolor ? 'active': ''}`} onClick={()=>{
+                        <Pagingbtn key={key} className={`${key+1 === btncolor ? 'active': ''}`} 
+                        onClick={()=>{
                             setpage(key)
                             setbtncolor(key+1)
                         }}>
