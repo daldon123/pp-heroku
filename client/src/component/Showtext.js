@@ -131,7 +131,7 @@ const Showtext = () => {
 
     const [idpk, setidpk] = useState([])
     useEffect(()=>{
-        axios.post('http://localhost:4000/show_img',{
+        axios.post('https://hong-popol.herokuapp.com/show_img',{
             idpk:data.idpk
         })
         .then(rs=>{
