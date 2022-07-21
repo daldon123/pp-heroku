@@ -36,6 +36,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 // app.use('/',delet_page)
 // app.use('/',coment)
 
+
 app.get('/page_number',(req, res)=>{
     console.log('/show_list_page 호출됨')
     const sql2 = `select count(*) from motogall_write;`
@@ -162,8 +163,6 @@ app.post('/show_text',(req, res, next)=>{
 
 app.post('/show_img',(req, res, next)=>{
     console.log('/show_img 호출됨')
-    
-
     const idpk = req.body.idpk
     // console.log(idpk)
     const sql = `select path1 from boder_img where idpk='${idpk}';`
@@ -172,13 +171,16 @@ app.post('/show_img',(req, res, next)=>{
         res.send(rs[0])
     })
 })
-
+// app.use('/img',(req, res)=>{
+//     fs.readFile('./uploads/1657780424335.JPG', (err, data)=>{
+//         res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+//         res.end(data);
+//     })
+// })
 app.get('/show_img2',(req, res, next)=>{
     console.log('/show_img2')
     const path1 = req.query.path
-    console.log('./uploads/'+path1)
-    
-    fs.readFile('./uploads/'+path1, (err, data)=>{
+    fs.readFile(`./uploads/${path1}`, (err, data)=>{
         res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
         res.end(data);
     })

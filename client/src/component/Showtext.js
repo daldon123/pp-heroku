@@ -130,16 +130,15 @@ const Showtext = () => {
     // console.log(data)
 
     const [idpk, setidpk] = useState([])
-
-
     useEffect(()=>{
-        axios.post('https://hong-popol.herokuapp.com/show_img',{
+        axios.post('http://localhost:4000/show_img',{
             idpk:data.idpk
         })
         .then(rs=>{
             setidpk(rs.data)
         })
     },[data])
+    console.log(idpk)
     const path = JSON.stringify(idpk)
     const asd = JSON.parse(path).path1
     console.log(asd)

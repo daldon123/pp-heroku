@@ -175,8 +175,8 @@ const Showlist = () => {
 
     console.log(page,'page') //현재페이지
 
-    const ifnum = 20
-    const page1 = ifnum / 10
+    // const ifnum = 20
+    const page1 = num / 10
     const page2 = Math.ceil(page1)
     
     const postsPerPage = 10;  //한번에 보여줄 페이지 갯수
