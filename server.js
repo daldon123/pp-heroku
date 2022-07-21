@@ -19,7 +19,7 @@ const options = {
     credentials: true, // 응답 헤더에 Access-Control-Allow-Credentials 추가
     optionsSuccessStatus: 200, // 응답 상태 200으로 설정
 };
-// app.use('/',  express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(cors(options));
 // app.use(cors());
 app.use(bodyParser.json());
@@ -171,20 +171,22 @@ app.post('/show_img',(req, res, next)=>{
         res.send(rs[0])
     })
 })
-// app.use('/img',(req, res)=>{
-//     fs.readFile('./uploads/1657780424335.JPG', (err, data)=>{
-//         res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
-//         res.end(data);
-//     })
+// app.get('/img',(req, res)=>{
+//     res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+//     res.write(`<img src='1657780424335.JPG' />`)
+//     res.end();
 // })
-app.get('/show_img2',(req, res, next)=>{
-    console.log('/show_img2')
-    const path1 = req.query.path
-    fs.readFile(`./uploads/${path1}`, (err, data)=>{
-        res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
-        res.end(data);
-    })
-})
+// app.get('/show_img2',(req, res, next)=>{
+//     console.log('/show_img2')
+//     const path1 = req.query.path
+//     res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+//     res.write(`<img src=${path1} />`)
+//     res.end();
+//     // fs.readFile(`./uploads/${path1}`, (err, data)=>{
+//     //     res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+//     //     res.end(data);
+//     // })
+// })
 
 app.post('/signup',(req, res)=>{
     console.log('/signup 호출됨')
