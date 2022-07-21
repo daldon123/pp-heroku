@@ -171,22 +171,6 @@ app.post('/show_img',(req, res, next)=>{
         res.send(rs[0])
     })
 })
-// app.get('/img',(req, res)=>{
-//     res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
-//     res.write(`<img src='1657780424335.JPG' />`)
-//     res.end();
-// })
-// app.get('/show_img2',(req, res, next)=>{
-//     console.log('/show_img2')
-//     const path1 = req.query.path
-//     res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
-//     res.write(`<img src=${path1} />`)
-//     res.end();
-//     // fs.readFile(`./uploads/${path1}`, (err, data)=>{
-//     //     res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
-//     //     res.end(data);
-//     // })
-// })
 
 app.post('/signup',(req, res)=>{
     console.log('/signup 호출됨')
